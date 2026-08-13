@@ -567,7 +567,7 @@
         </div>
     </section>
 
-    <script>
+   <script>
         window.onscroll = () => {
             document.getElementById('navbar').classList.toggle('sticky', window.scrollY > 50);
             document.querySelectorAll('.reveal').forEach(el => {
@@ -577,13 +577,23 @@
 
         const lb = document.getElementById('lightbox');
         const mh = document.getElementById('media-holder');
+        
+        /* MP4 SUPPORT WALA NAYA FUNCTION */
         function openLightbox(type, src) {
-            mh.innerHTML = type === 'img' 
-                ? `<img src="${src}" style="max-height:85vh; border-radius:10px;">` 
-                : `<iframe src="${src}" frameborder="0" allowfullscreen style="width:80vw; height:80vh; border-radius:15px;"></iframe>`;
+            if (type === 'img') {
+                mh.innerHTML = `<img src="${src}" style="max-height:85vh; border-radius:10px;">`;
+            } else if (type === 'mp4') {
+                mh.innerHTML = `<video src="${src}" controls autoplay style="max-width:80vw; max-height:80vh; border-radius:15px; outline:none;"></video>`;
+            } else {
+                mh.innerHTML = `<iframe src="${src}" frameborder="0" allowfullscreen style="width:80vw; height:80vh; border-radius:15px;"></iframe>`;
+            }
             lb.style.display = 'flex';
         }
-        document.querySelector('.close-lightbox').onclick = () => lb.style.display = 'none';
+        
+        document.querySelector('.close-lightbox').onclick = () => {
+            lb.style.display = 'none';
+            mh.innerHTML = ''; /* Video ko background me play hone se rokne ke liye */
+        };
 
         document.getElementById('waForm').onsubmit = (e) => {
             e.preventDefault();
