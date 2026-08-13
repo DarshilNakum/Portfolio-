@@ -460,15 +460,27 @@
         </div>
     </section>
 
-    <!-- 2. LOGO DESIGN (1:1 STATIC) -->
+   <!-- 2. LOGO DESIGN (SLIDER) -->
     <section class="section" style="background:#f0faff;">
         <h2 style="text-align:center;">Logo Design Portfolio</h2>
         <p style="text-align:center; margin-bottom:30px;">1080x1080 Brand Identities</p>
-        <div class="portfolio-grid reveal">
-            <div class="portfolio-item ratio-square" onclick="openLightbox('img', 'images/logo1.jpg')"><img src="images/logo1.jpg"></div>
-            <div class="portfolio-item ratio-square" onclick="openLightbox('img', 'images/logo2.jpg')"><img src="images/logo2.jpg"></div>
-            <div class="portfolio-item ratio-square" onclick="openLightbox('img', 'images/logo3.jpg')"><img src="images/logo3.jpg"></div>
-            <div class="portfolio-item ratio-square" onclick="openLightbox('img', 'images/logo4.jpg')"><img src="images/logo4.jpg"></div>
+        
+        <div class="sliders-wrapper reveal">
+            <div class="slider-container">
+                <div class="slider-track marquee-rtl">
+                    <!-- Set 1 -->
+                    <div class="slide" onclick="openLightbox('img', 'images/logo1.jpg')"><img src="images/logo1.jpg"></div>
+                    <div class="slide" onclick="openLightbox('img', 'images/logo2.jpg')"><img src="images/logo2.jpg"></div>
+                    <div class="slide" onclick="openLightbox('img', 'images/logo3.jpg')"><img src="images/logo3.jpg"></div>
+                    <div class="slide" onclick="openLightbox('img', 'images/logo4.jpg')"><img src="images/logo4.jpg"></div>
+                    
+                    <!-- Set 2 (Duplicated for continuous infinite scrolling) -->
+                    <div class="slide"><img src="images/logo1.jpg"></div>
+                    <div class="slide"><img src="images/logo2.jpg"></div>
+                    <div class="slide"><img src="images/logo3.jpg"></div>
+                    <div class="slide"><img src="images/logo4.jpg"></div>
+                </div>
+            </div>
         </div>
     </section>
 
